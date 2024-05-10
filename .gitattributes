@@ -1,0 +1,12 @@
+# End of file
+*.sh    eol=lf
+*.bat   eol=crlf
+*.cmd   eol=crlf
+*.md    eol=lf
+*.yml   eol=lf
+*.js    eol=lf
+*.json  eol=lf
+*.html  eol=lf
+*.css   eol=lf
+*.yaml  eol=lf
+*.xml   eol=lf
