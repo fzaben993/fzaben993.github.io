@@ -12,17 +12,41 @@ cd iac
 
 Create stack:
 
+- aws cli
+
 ```sh
-aws cloudformation create-stack --stack-name my-stack --region eu-west-1 --template-body file://vpc.yml
+aws cloudformation create-stack --stack-name my-stack --region eu-west-1 --template-body file://network.yml --parameters file://network-parameters.json
+
 ```
 
-- powershell: `.\create.ps1 "my-stack"  "vpc.yml" "vps-parameters.json"`
-- bash: `./create.sh "my-stack"  "vpc.yml" "vps-parameters.json"`
+- powershell:
+
+```powershell
+.\create.ps1 "my-stack"  "network.yml" "network-parameters.json"
+```
+
+- bash
+
+```sh
+./create.sh "my-stack"  "network.yml" "network-parameters.json"
+```
 
 Update stack:
 
+- aws cli
+
 ```sh
-aws cloudformation update-stack --stack-name my-stack --region eu-west-1 --template-body file://vpc.yml
+aws cloudformation update-stack --stack-name my-stack --region eu-west-1 --template-body file://network.yml --parameters file://network-parameters.json
+```
+
+```powershell
+.\update.ps1 "my-stack"  "network.yml" "network-parameters.json"
+```
+
+- bash
+
+```sh
+./update.sh "my-stack"  "network.yml" "network-parameters.json"
 ```
 
 Describe stack:
