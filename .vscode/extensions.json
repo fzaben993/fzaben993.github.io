@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "redhat.vscode-yaml",
+        "davidanson.vscode-markdownlint",
+        "prettier.prettier",
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig"
+    ]
+}
