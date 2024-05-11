@@ -1,3 +1,5 @@
 site/
 template/
 .hintrc
+.terraform*
+*.tfstate*
