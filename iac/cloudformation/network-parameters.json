@@ -1,7 +1,7 @@
 [
 	{
 		"ParameterKey": "EnvironmentName",
-		"ParameterValue": "VPCPOC"
+		"ParameterValue": "DemoProject"
 	},
 	{
 		"ParameterKey": "VpcCIDR",

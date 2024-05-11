@@ -2,6 +2,23 @@
 
 This repository contains the code for the infrastructure as code (IaC) for the project using terrafrom or AWS cloudformation.
 
+The Code will create the resources as split into two parts:
+
+Network:
+    - VPC
+    - Internet Gateway
+    - Subnets (Public and Private)
+    - Route Tables and Routes
+    - Elastic IPs
+    - NAT Gateways
+
+Server
+    - Security Groups
+    - EC2 Instances
+    - Load Balancer
+    - Auto Scaling Group
+    - Launch Configuration
+
 ## Pre-requisites
 
 - AWS account
@@ -11,11 +28,21 @@ This repository contains the code for the infrastructure as code (IaC) for the p
 
 ## CloudFormation
 
+The CloudFormation directory contains the CloudFormation scripts to create the network infrastructure then the server infrastructure.
+
+- network.yml: This file contains the network resources like VPC, Subnets, Route Tables, etc.
+- network-parameters.json: This file contains the parameters for the network resources like VPC CIDR, Subnet CIDR, etc.
+- servers.yml: This file contains the server resources like Security Groups, EC2 Instances, etc.
+- servers-parameters.json: This file contains the parameters for the server.
+
 Change the directory to the cloudformation directory:
 
 ```sh
 cd iac/cloudformation
 ```
+
+Examples to create, update, describe, and delete the stack using the AWS CLI, PowerShell, and Bash for network resources.
+The same can be used for server resources by changing the stack name, template file names and parameters file names.
 
 Create stack:
 
@@ -26,13 +53,13 @@ aws cloudformation create-stack --stack-name my-stack --region eu-west-1 --templ
 
 ```
 
-- powershell:
+PowerShell:
 
 ```powershell
 .\create.ps1 "my-stack"  "network.yml" "network-parameters.json"
 ```
 
-- bash
+Bash
 
 ```sh
 ./create.sh "my-stack"  "network.yml" "network-parameters.json"
@@ -50,7 +77,7 @@ aws cloudformation update-stack --stack-name my-stack --region eu-west-1 --templ
 .\update.ps1 "my-stack"  "network.yml" "network-parameters.json"
 ```
 
-- bash
+Bash
 
 ```sh
 ./update.sh "my-stack"  "network.yml" "network-parameters.json"
@@ -79,7 +106,7 @@ export AWS_ACCESS_KEY_ID="anaccesskey"
 export AWS_SECRET_ACCESS_KEY="asecretkey"
 ```
 
-- powershell:
+PowerShell
 
 ```powershell
 $env:AWS_ACCESS_KEY_ID = "anaccesskey"
